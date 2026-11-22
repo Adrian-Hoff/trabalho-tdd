@@ -8,41 +8,41 @@ public class LogisticaTest {
     // QUILO
     @Test
     void given5kg_WhenMultiplicadoPor2_ThenRetorna10kg() {
-        Quilo cinco = new Quilo(5);
-        assertEquals(new Quilo(10), cinco.multiplicar(2));
+        Peso cinco = new Peso(5, "kg");
+        assertEquals(new Peso(10, "kg"), cinco.multiplicar(2));
     }
 
     @Test
     void given5kg_WhenEqualsComOutros5kg_ThenRetornaVerdadeiro() {
-        assertTrue(new Quilo(5).equals(new Quilo(5)));
+        assertTrue(new Peso(5, "kg").equals(new Peso(5, "kg")));
     }
 
     @Test
     void given5kg_WhenEqualsCom6kg_ThenRetornaFalso() {
-        assertFalse(new Quilo(5).equals(new Quilo(6)));
+        assertFalse(new Peso(5, "kg").equals(new Peso(6, "kg")));
     }
 
     // GRAMA
     @Test
     void given5g_WhenMultiplicadoPor2_ThenRetorna10g(){
-        Grama cinco = new Grama(5);
-        assertEquals(new Grama(10), cinco.multiplicar(2));
+        Peso cinco = new Peso(5, "g");
+        assertEquals(new Peso(10, "g"), cinco.multiplicar(2));
     }
 
     @Test
     void given5g_WhenEqualsComOutros5g_ThenRetornaVerdadeiro() {
-        assertTrue(new Grama(5).equals(new Grama(5)));
+        assertTrue(new Peso(5, "g").equals(new Peso(5, "g")));
     }
 
     @Test
     void given5g_WhenEqualsCom6g_ThenRetornaFalso() {
-        assertFalse(new Grama(5).equals(new Grama(6)));
+        assertFalse(new Peso(5, "g").equals(new Peso(6, "g")));
     }
 
     // QUILO E GRAMA
     @Test
     void givenAnyKgOuG_WhenEqualsComUnidadeCorreta_ThenRetornaVerdadeiro(){
-        assertEquals("kg", new Quilo(0).getUnidade());
-        assertEquals("g", new Grama(0).getUnidade());
+        assertEquals("kg", new Peso(0, "kg").getUnidade());
+        assertEquals("g", new Peso(0, "g").getUnidade());
     }
 }
