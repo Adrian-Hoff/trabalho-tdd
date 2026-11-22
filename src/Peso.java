@@ -8,12 +8,16 @@ public class Peso {
     }
 
     public Peso somar(Peso outroPeso, String unidadeDeOutroPeso){
-        if(this.unidade == unidadeDeOutroPeso){
-            return new Peso(quantidade + outroPeso.getQuantidade(), unidade);            
-        }else{
-            return new Peso(quantidade*1000 + outroPeso.getQuantidade(), unidadeDeOutroPeso);   
-        }
+            if(this.unidade == unidadeDeOutroPeso){
+                return new Peso(quantidade + outroPeso.getQuantidade(), unidade);            
+            }else{
+                return new Peso(quantidade*1000 + outroPeso.getQuantidade(), unidadeDeOutroPeso);   
+            }
 
+    }
+
+    public Soma somar(Peso outroPeso){
+        return new Soma(new Peso(this.quantidade, this.unidade), outroPeso);
     }
 
     public Peso multiplicar(int indice) {

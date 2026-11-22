@@ -76,13 +76,29 @@ public class LogisticaTest {
     }
 
     @Test
-    void given1kg_WhenSoma500g_ThenRetorna1500g() {
+        void given1kg_WhenSoma500g_ThenRetorna1500g() {
         Peso umQuilo = new Peso(1,"kg");
         Peso quinhentosGramas = new Peso(500,"g");
+        Balanca balanca = new Balanca();
+        balanca.adicionarTaxaDeConversao("kg", "g", 1000);
 
-        Peso total = umQuilo.somar(quinhentosGramas, "g");
+        Soma total = umQuilo.somar(quinhentosGramas);
+        Peso convertido = balanca.converter(total, "g");
 
-        assertEquals(new Peso(1500,"g"), total);
+        assertEquals(new Peso(1500,"g"), convertido);
+    }
+
+    @Test
+        void given1kg_WhenSoma500g_ThenRetorna1kgEMeio() {
+        Peso umQuilo = new Peso(1,"kg");
+        Peso quinhentosGramas = new Peso(500,"g");
+        Balanca balanca = new Balanca();
+        balanca.adicionarTaxaDeConversao("g", "kg", 0.001f);
+
+        Soma total = umQuilo.somar(quinhentosGramas);
+        Peso convertido = balanca.converter(total, "kg");
+
+        assertEquals(new Peso(1.5f,"kg"), convertido);
     }
 
 
