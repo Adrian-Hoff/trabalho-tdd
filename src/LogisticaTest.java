@@ -26,9 +26,14 @@ public class LogisticaTest {
     void given1kg_WhenSoma1kg_ThenRetorna2kg() {
         Peso umQuilo = new Peso(1,"kg");
         Peso outroQuilo = new Peso(1,"kg");
-        Peso total = umQuilo.somar(outroQuilo, "kg");
+        Soma total = umQuilo.somar(outroQuilo);
 
-        assertEquals(new Peso(2,"kg"), total);
+        Balanca balanca = new Balanca();
+        balanca.adicionarTaxaDeConversao("kg", "kg", 1);
+
+        Peso convertido = balanca.converter(total, "kg");
+
+        assertEquals(new Peso(2,"kg"), convertido);
     }
 
 
@@ -55,9 +60,14 @@ public class LogisticaTest {
     void given1g_WhenSoma1g_ThenRetorna2g() {
         Peso umGrama = new Peso(1,"g");
         Peso outroGrama = new Peso(1,"g");
-        Peso total = umGrama.somar(outroGrama, "g");
+        Soma total = umGrama.somar(outroGrama);
 
-        assertEquals(new Peso(2,"g"), total);
+        Balanca balanca = new Balanca();
+        balanca.adicionarTaxaDeConversao("g", "g", 1);
+
+        Peso convertido = balanca.converter(total, "g");
+
+        assertEquals(new Peso(2,"g"), convertido);
     }
 
 
