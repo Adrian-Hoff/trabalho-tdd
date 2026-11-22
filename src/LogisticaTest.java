@@ -22,6 +22,15 @@ public class LogisticaTest {
         assertFalse(new Peso(5, "kg").equals(new Peso(6, "kg")));
     }
 
+    @Test
+    void given1kg_WhenSoma1kg_ThenRetorna2kg() {
+        Peso umQuilo = new Peso(1,"kg");
+        Peso outroQuilo = new Peso(1,"kg");
+        Peso total = umQuilo.somar(outroQuilo);
+
+        assertEquals(new Peso(2,"kg"), total);
+    }
+
     // GRAMA
     @Test
     void given5g_WhenMultiplicadoPor2_ThenRetorna10g(){
@@ -37,6 +46,15 @@ public class LogisticaTest {
     @Test
     void given5g_WhenEqualsCom6g_ThenRetornaFalso() {
         assertFalse(new Peso(5, "g").equals(new Peso(6, "g")));
+    }
+
+    @Test
+    void given1g_WhenSoma1g_ThenRetorna2g() {
+        Peso umGrama = new Peso(1,"g");
+        Peso outroGrama = new Peso(1,"g");
+        Peso total = umGrama.somar(outroGrama);
+
+        assertEquals(new Peso(2,"g"), total);
     }
 
     // QUILO E GRAMA

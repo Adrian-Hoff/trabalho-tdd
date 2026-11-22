@@ -7,12 +7,20 @@ public class Peso {
         this.quantidade = quantidade;
     }
 
+    public Peso somar(Peso outroPeso){
+        return new Peso(quantidade + outroPeso.getQuantidade(), unidade);
+    }
+
     public Peso multiplicar(int indice) {
         return new Peso(quantidade*indice, unidade);
     }
 
     public String getUnidade(){
         return unidade;
+    };
+
+    public int getQuantidade(){
+        return quantidade;
     };
 
     @Override
