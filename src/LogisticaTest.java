@@ -141,4 +141,41 @@ public class LogisticaTest {
         Peso convertido = balanca.converter(umGrama, "kg");
         assertEquals(new Peso(1, "kg"), convertido);
     }
+
+    @Test
+        void given1kg_WhenConverteParaLibras_ThenRetornaValorEsperadoEmLibras () { //2,20462 libras
+        Peso umQuilo = new Peso(1, "kg");
+        Balanca balanca = new Balanca();
+        balanca.adicionarTaxaDeConversao("kg", "lb", 2.20462f);
+        Peso convertido = balanca.converter(umQuilo, "lb");
+
+        System.err.println(convertido.unidade);
+
+        assertEquals(new Peso(2.20462f, "lb"), convertido);
+    }
+
+    @Test
+        void given1lb_WhenConverteParaLibras_ThenRetornaValorEsperadoEmKg () { //2,20462 libras
+        Peso umaLibra = new Peso(1, "lb");
+        Balanca balanca = new Balanca();
+        balanca.adicionarTaxaDeConversao("lb", "kg", 0.453592f);
+        Peso convertido = balanca.converter(umaLibra, "kg");
+
+        System.err.println(convertido.unidade);
+
+        assertEquals(new Peso(0.453592f, "kg"), convertido);
+    }
+
+    @Test
+        void given1lb_WhenConverteParaLibras_ThenRetornaValorEsperadoEmg () { //2,20462 libras
+        Peso umaLibra = new Peso(1, "lb");
+        Balanca balanca = new Balanca();
+        balanca.adicionarTaxaDeConversao("lb", "g", 453.592f);
+        Peso convertido = balanca.converter(umaLibra, "g");
+
+        System.err.println(convertido.unidade);
+
+        assertEquals(new Peso(453.592f, "g"), convertido);
+    }
+
 }
