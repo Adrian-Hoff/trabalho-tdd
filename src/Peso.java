@@ -17,6 +17,6 @@ public class Peso {
 
     @Override
     public boolean equals(Object obj) {
-        return this.quantidade == ((Peso) obj).quantidade;
+        return this.quantidade == ((Peso) obj).quantidade && this.unidade == ((Peso) obj).unidade;
     }
 }

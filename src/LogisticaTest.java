@@ -45,4 +45,9 @@ public class LogisticaTest {
         assertEquals("kg", new Peso(0, "kg").getUnidade());
         assertEquals("g", new Peso(0, "g").getUnidade());
     }
+
+    @Test
+    void given5kg_WhenEqualsCom5g_ThenRetornaFalso(){
+        assertFalse(new Peso(5,"kg").equals(new Peso(5, "g")));
+    }
 }
