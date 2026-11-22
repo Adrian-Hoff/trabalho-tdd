@@ -31,6 +31,9 @@ public class LogisticaTest {
         assertEquals(new Peso(2,"kg"), total);
     }
 
+
+
+
     // GRAMA
     @Test
     void given5g_WhenMultiplicadoPor2_ThenRetorna10g(){
@@ -57,6 +60,9 @@ public class LogisticaTest {
         assertEquals(new Peso(2,"g"), total);
     }
 
+
+
+
     // QUILO E GRAMA
     @Test
     void givenAnyKgOuG_WhenEqualsComUnidadeCorreta_ThenRetornaVerdadeiro(){
@@ -77,5 +83,36 @@ public class LogisticaTest {
         Peso total = umQuilo.somar(quinhentosGramas, "g");
 
         assertEquals(new Peso(1500,"g"), total);
+    }
+
+
+
+
+    // BALANÇA 
+    @Test
+        void given1kg_WhenConverteParaGramas_ThenRetorna1000g () {
+        Peso umQuilo = new Peso(1, "kg");
+        Balanca balanca = new Balanca();
+        balanca.adicionarTaxaDeConversao("kg", "g", 1000);
+        Peso convertido = balanca.converter(umQuilo, "g");
+        assertEquals(new Peso(1000, "g"), convertido);
+    }
+
+    @Test
+        void given12kg_WhenConverteParaGramas_ThenRetorna12000g () {
+        Peso umQuilo = new Peso(12, "kg");
+        Balanca balanca = new Balanca();
+        balanca.adicionarTaxaDeConversao("kg", "g", 1000);
+        Peso convertido = balanca.converter(umQuilo, "g");
+        assertEquals(new Peso(12000, "g"), convertido);
+    }
+
+    @Test
+        void given1000g_WhenConverteParaGramas_ThenRetorna1kg () {
+        Peso umGrama = new Peso(1000, "g");
+        Balanca balanca = new Balanca();
+        balanca.adicionarTaxaDeConversao("g", "kg", 0.001f);
+        Peso convertido = balanca.converter(umGrama, "kg");
+        assertEquals(new Peso(1, "kg"), convertido);
     }
 }

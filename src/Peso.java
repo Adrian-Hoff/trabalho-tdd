@@ -1,8 +1,8 @@
 public class Peso {
     protected String unidade;
-    protected int quantidade;
+    protected float quantidade;
 
-    public Peso(int quantidade, String unidade) {
+    public Peso(float quantidade, String unidade) {
         this.unidade = unidade;
         this.quantidade = quantidade;
     }
@@ -24,7 +24,7 @@ public class Peso {
         return unidade;
     };
 
-    public int getQuantidade(){
+    public float getQuantidade(){
         return quantidade;
     };
 
