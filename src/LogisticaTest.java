@@ -178,4 +178,27 @@ public class LogisticaTest {
         assertEquals(new Peso(453.592f, "g"), convertido);
     }
 
+
+
+
+
+
+
+    //DESAFIO NÃO CONCLUÍDO :(
+    @Test
+    void given1kg_WhenSoma2kgE3kg_ThenRetorna6kg() {
+        Peso umQuilo = new Peso(1, "kg");
+        Peso doisQuilos = new Peso(2, "kg");
+        Peso trêsQuilos = new Peso(3, "kg");
+
+        Soma total = umQuilo.somar(doisQuilos).somar(trêsQuilos);
+
+        Balanca balanca = new Balanca();
+        balanca.adicionarTaxaDeConversao("kg", "kg", 1);
+
+        Peso convertido = balanca.converter(total, "kg");
+
+        assertEquals(new Peso(6, "kg"), convertido);
+    }
+
 }
