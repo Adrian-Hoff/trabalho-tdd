@@ -11,4 +11,14 @@ public class LogisticaTest {
         Quilo dez = cinco.multiplicar(2);
         assertEquals(10, dez.quantidade);
     }
+
+    @Test
+    void given5kg_WhenEqualsComOutros5kg_ThenRetornaVerdadeiro() {
+        assertTrue(new Quilo(5).equals(new Quilo(5)));
+    }
+
+    @Test
+    void given5kg_WhenEqualsCom6kg_ThenRetornaFalso() {
+        assertFalse(new Quilo(5).equals(new Quilo(6)));
+    }
 }
