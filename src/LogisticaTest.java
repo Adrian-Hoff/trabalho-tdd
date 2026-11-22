@@ -8,8 +8,7 @@ public class LogisticaTest {
     @Test
     void given5kg_WhenMultiplicadoPor2_ThenRetorna10kg() {
         Quilo cinco = new Quilo(5);
-        Quilo dez = cinco.multiplicar(2);
-        assertEquals(10, dez.quantidade);
+        assertEquals(new Quilo(10), cinco.multiplicar(2));
     }
 
     @Test

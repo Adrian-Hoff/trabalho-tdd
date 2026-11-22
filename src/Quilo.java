@@ -1,5 +1,5 @@
 public class Quilo {
-    public int quantidade;
+    private final int quantidade;
 
     public Quilo(int quantidade) {
         this.quantidade = quantidade;
