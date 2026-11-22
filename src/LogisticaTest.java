@@ -38,4 +38,11 @@ public class LogisticaTest {
     void given5g_WhenEqualsCom6g_ThenRetornaFalso() {
         assertFalse(new Grama(5).equals(new Grama(6)));
     }
+
+    // QUILO E GRAMA
+    @Test
+    void givenAnyKgOuG_WhenEqualsComUnidadeCorreta_ThenRetornaVerdadeiro(){
+        assertEquals("kg", new Quilo(0).getUnidade());
+        assertEquals("g", new Grama(0).getUnidade());
+    }
 }

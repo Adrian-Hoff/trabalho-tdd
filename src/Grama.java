@@ -6,4 +6,9 @@ public class Grama extends Peso{
     public Grama multiplicar(int indice) {
         return new Grama(quantidade*indice);
     }
+
+    @Override
+    public String getUnidade() {
+        return "g";
+    }
 }
